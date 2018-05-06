@@ -8,6 +8,7 @@ public:
 
     void loop() {
         lcd->lcd->setCursor(0, 1);
-        lcd->lcd->print(millis());
+        lcd->lcd->print(millis() / 1000);
+        delay(100);
     }
 };
