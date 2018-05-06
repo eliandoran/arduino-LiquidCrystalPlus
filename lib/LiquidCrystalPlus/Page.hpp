@@ -12,6 +12,7 @@ public:
     void init(LiquidCrystalPlus &lcd);
     virtual void show();
     virtual void loop();
+    virtual ~Page();
 };
 
 #endif

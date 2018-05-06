@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include <LiquidCrystal.h>
 #include "LiquidCrystalPlus.hpp"
 
@@ -24,15 +25,24 @@ void LiquidCrystalPlus::init() {
     this->lcd->begin(this->rows, this->columns);
 }
 
-void LiquidCrystalPlus::show(Page &page) {
-    page.init(*this);
-    activePage = &page;
-    page.show();
+void LiquidCrystalPlus::show(Page *page) {
+    if (activePage != NULL) {
+        delete activePage;
+    }
+
+    activePage = page;
+    activePageShown = false;
 }
 
 void LiquidCrystalPlus::doLoop() {
     while (1) {
         if (activePage != NULL) {
+            if (!activePageShown) {
+                activePage->init(*this);
+                activePage->show();
+                activePageShown = true;
+            }
+
             activePage->loop();
         }
     }
