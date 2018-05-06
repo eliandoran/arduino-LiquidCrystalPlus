@@ -3,8 +3,8 @@
 
 void Page::init(LiquidCrystalPlus &lcd) {
     this->lcd = &lcd;
-    this->display = lcd.display;
-    lcd.lcd->clear();
+    this->display = &lcd.display;
+    this->display->clear();
 }
 
 Page::~Page() {
