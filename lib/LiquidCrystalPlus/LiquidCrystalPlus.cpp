@@ -18,5 +18,11 @@ void LiquidCrystalPlus::setResolution(int columns, int rows) {
 }
 
 void LiquidCrystalPlus::init() {
+    this->display = new Display(*this);
     this->lcd->begin(this->rows, this->columns);
+}
+
+void LiquidCrystalPlus::show(Page &page) {
+    page.init(*this);
+    page.show();
 }

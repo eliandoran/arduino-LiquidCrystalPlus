@@ -1,7 +1,16 @@
 #include <Arduino.h>
+#include <LiquidCrystalPlus.hpp>
+#include "HelloWorldPage.hpp"
+
+LiquidCrystalPlus lcd;
 
 void setup() {
-    // put your setup code here, to run once:
+    lcd.setPins(8, 9, 4, 5, 6, 7);
+    lcd.setResolution(16, 2);
+    lcd.init();
+
+    HelloWorldPage helloPage;
+    lcd.show(helloPage);
 }
 
 void loop() {
