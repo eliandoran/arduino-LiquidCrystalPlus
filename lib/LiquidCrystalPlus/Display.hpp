@@ -8,7 +8,9 @@ protected:
     LiquidCrystalPlus &lcd;
 public:
     Display(LiquidCrystalPlus &lcd);
+
     void print(char* message);
+    void print(int x, int y, char* message);
 };
 
 #endif

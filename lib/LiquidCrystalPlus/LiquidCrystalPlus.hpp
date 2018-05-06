@@ -11,6 +11,7 @@ class LiquidCrystalPlus {
 private:
     int columns;
     int rows;
+    Page *activePage;
 
 public:
     Display *display;
@@ -20,6 +21,7 @@ public:
     void setResolution(int columns, int rows);
     void init();
     void show(Page &page);
+    void doLoop();
 };
 
 #endif

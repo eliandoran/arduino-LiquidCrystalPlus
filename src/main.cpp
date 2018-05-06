@@ -11,6 +11,7 @@ void setup() {
 
     HelloWorldPage helloPage;
     lcd.show(helloPage);
+    lcd.doLoop();
 }
 
 void loop() {

@@ -7,6 +7,7 @@ public:
     }
 
     void loop() {
-
+        lcd->lcd->setCursor(0, 1);
+        lcd->lcd->print(millis());
     }
 };

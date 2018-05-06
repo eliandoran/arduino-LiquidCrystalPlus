@@ -3,6 +3,8 @@
 
 LiquidCrystalPlus::LiquidCrystalPlus()
 {
+    activePage = NULL;
+
     // Set defaults
     this->columns = 16;
     this->rows = 2;
@@ -24,5 +26,14 @@ void LiquidCrystalPlus::init() {
 
 void LiquidCrystalPlus::show(Page &page) {
     page.init(*this);
+    activePage = &page;
     page.show();
+}
+
+void LiquidCrystalPlus::doLoop() {
+    while (1) {
+        if (activePage != NULL) {
+            activePage->loop();
+        }
+    }
 }
