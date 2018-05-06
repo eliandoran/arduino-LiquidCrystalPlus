@@ -28,11 +28,11 @@ void Display::setResolution(int columns, int rows) {
     this->rows = rows;
 }
 
-void Display::print(char* message) {
-    lcd->print(message);
+size_t Display::write(uint8_t value) {
+    lcd->write(value);
+    return true;
 }
 
-void Display::print(int x, int y, char* message) {
-    lcd->setCursor(x, y);
-    lcd->print(message);
+void Display::setCursor(uint8_t col, uint8_t row) {
+    lcd->setCursor(col, row);
 }

@@ -14,8 +14,8 @@ void PingPage::loop() {
 }
 
 void PongPage::show() {
-    lcd->lcd->setCursor(0, 1);
-    lcd->lcd->print("Pong");
+    display->setCursor(0, 1);
+    display->print("Pong");
 }
 
 void PongPage::loop() {

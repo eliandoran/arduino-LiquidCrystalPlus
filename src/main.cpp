@@ -13,10 +13,10 @@ void setup() {
     lcd.init();
 
     // Example: HelloWorld
-    lcd.show(new HelloWorldPage());
+    //lcd.show(new HelloWorldPage());
 
     // Example: RecursivePageNavigation
-    //lcd.show(new PingPage());
+    lcd.show(new PingPage());
 }
 
 void loop() {
