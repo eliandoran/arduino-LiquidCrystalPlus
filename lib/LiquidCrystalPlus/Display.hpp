@@ -1,13 +1,15 @@
 #ifndef DISPLAY_INCLUDED
 #define DISPLAY_INCLUDED
 
+#include <LiquidCrystal.h>
+
 class LiquidCrystalPlus;
 
 class Display {
 protected:
-    LiquidCrystalPlus &lcd;
+    LiquidCrystal &lcd;
 public:
-    Display(LiquidCrystalPlus &lcd);
+    Display(LiquidCrystal &lcd);
 
     void print(char* message);
     void print(int x, int y, char* message);
