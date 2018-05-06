@@ -1,3 +1,6 @@
+#ifndef LIQUID_CRYSTAL_PLUS_INCLUDED
+#define LIQUID_CRYSTAL_PLUS_INCLUDED 1
+
 #include <Arduino.h>
 #include <inttypes.h>
 #include <LiquidCrystal.h>
@@ -14,3 +17,5 @@ public:
     void setResolution(int columns, int rows);
     void init();
 };
+
+#endif
