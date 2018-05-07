@@ -38,7 +38,7 @@ void Page::inner_show() {
         Serial.println((long)widget);
 
         delay(100);
-        widget->show();
+        widget->update();
     }
 }
 
@@ -47,6 +47,7 @@ void Page::inner_loop() {
 
     for (int i=0; i<widgets.size(); i++) {
         Widget* widget = widgets.get(i);
-        widget->loop();
+        widget->update();
+        delay(100);
     }
 }

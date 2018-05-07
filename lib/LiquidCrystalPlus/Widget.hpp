@@ -14,8 +14,7 @@ public:
 
     void init(Page &parentPage);
 
-    virtual void show();
-    virtual void loop();
+    virtual void update();
     virtual ~Widget();
 
     Page& getParentPage();

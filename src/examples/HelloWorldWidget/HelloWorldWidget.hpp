@@ -1,21 +1,20 @@
+#include <Arduino.h>
 #include <LiquidCrystalPlus.hpp>
 
-class HelloWorldWidgetPage: public Page {
-private:
-    Label helloWorld;
+class MillisecondsCounterWidget: public Widget {
+    void update() {
+        display->setCursor(0, 1);
+        display->print(millis());
+    }
+};
 
+class HelloWorldWidgetPage: public Page {
 public:
     virtual void show() {
-        add(helloWorld);
+        add(new Label());
+        add(new MillisecondsCounterWidget());
     }
 
     virtual void loop() {
-        extern int __heap_start, *__brkval;
-        int v;
-        int freeRAM = (int) &v - (__brkval == 0 ? (int) &__heap_start : (int) __brkval);
-
-        display->setCursor(0, 1);
-        display->print(freeRAM);
-        delay(100);
     }
 };

@@ -6,13 +6,9 @@
 #include <Arduino.h>
 
 class Label: public Widget {
-    void show() {
+    void update() {
         display->setCursor(0, 0);
         display->print("Hi");
-    }
-
-    void loop() {
-
     }
 };
 
