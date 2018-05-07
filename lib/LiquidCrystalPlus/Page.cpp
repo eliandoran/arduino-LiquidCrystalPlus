@@ -31,13 +31,10 @@ void Page::loop() { }
 void Page::inner_show() {
     if (!widgets.size()) return;
 
-    Serial.print(widgets.size());
+    lastUpdateTime = millis();
+
     for (int i=0; i<widgets.size(); i++) {
         Widget* widget = widgets.get(i);
-        Serial.print("Widget");
-        Serial.println((long)widget);
-
-        delay(100);
         widget->update();
     }
 }
@@ -45,9 +42,17 @@ void Page::inner_show() {
 void Page::inner_loop() {
     if (!widgets.size()) return;
 
+    unsigned int timePassed = millis() - lastUpdateTime;
+
     for (int i=0; i<widgets.size(); i++) {
         Widget* widget = widgets.get(i);
-        widget->update();
-        delay(100);
+        widget->msSinceUpdate += timePassed;
+
+        if (widget->needsUpdate()) {
+            widget->update();
+            widget->msSinceUpdate = 0;
+        }
     }
+
+    lastUpdateTime = millis();
 }

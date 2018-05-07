@@ -6,6 +6,10 @@ class MillisecondsCounterWidget: public Widget {
         display->setCursor(0, 1);
         display->print(millis());
     }
+
+    bool needsUpdate() {
+        return (msSinceUpdate >= 1000);
+    }
 };
 
 class HelloWorldWidgetPage: public Page {
@@ -16,5 +20,6 @@ public:
     }
 
     virtual void loop() {
+
     }
 };

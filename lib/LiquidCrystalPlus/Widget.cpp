@@ -15,3 +15,7 @@ Widget::Widget() { }
 Widget::~Widget() {}
 
 void Widget::update() {}
+
+bool Widget::needsUpdate() {
+    return false;
+}

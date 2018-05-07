@@ -12,6 +12,7 @@ protected:
     LiquidCrystalPlus *lcd;
     Display *display;
     LinkedList<Widget*> widgets;
+    unsigned long lastUpdateTime;
 
 public:
     Page();

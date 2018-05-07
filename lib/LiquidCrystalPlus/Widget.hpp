@@ -5,9 +5,12 @@ class Page;
 class Display;
 
 class Widget {
+friend class Page;
+
 protected:
     Page *parentPage;
     Display *display;
+    unsigned int msSinceUpdate;
 
 public:
     Widget();
@@ -15,6 +18,7 @@ public:
     void init(Page &parentPage);
 
     virtual void update();
+    virtual bool needsUpdate();
     virtual ~Widget();
 
     Page& getParentPage();
