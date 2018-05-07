@@ -6,6 +6,8 @@
 #include "Page.hpp"
 #include "Display.hpp"
 
+#include "widgets/Label.hpp"
+
 class LiquidCrystalPlus {
 private:
     Page *activePage;

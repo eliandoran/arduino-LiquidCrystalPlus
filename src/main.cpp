@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <LiquidCrystalPlus.hpp>
 #include "examples/HelloWorld/HelloWorldPage.hpp"
+#include "examples/HelloWorldWidget/HelloWorldWidget.hpp"
 #include "examples/RecursivePageNavigation/PingPage.hpp"
 
 LiquidCrystalPlus lcd;
@@ -15,8 +16,11 @@ void setup() {
     // Example: HelloWorld
     //lcd.show(new HelloWorldPage());
 
+    // Example: HelloWorldWidgetPage
+    lcd.show(new HelloWorldWidgetPage());
+
     // Example: RecursivePageNavigation
-    lcd.show(new PingPage());
+    //lcd.show(new PingPage());
 }
 
 void loop() {
