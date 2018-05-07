@@ -33,9 +33,11 @@ void LiquidCrystalPlus::doLoop() {
             if (!activePageShown) {
                 activePage->init(*this);
                 activePage->show();
+                activePage->inner_show();
                 activePageShown = true;
             }
 
+            activePage->inner_loop();
             activePage->loop();
         }
     }

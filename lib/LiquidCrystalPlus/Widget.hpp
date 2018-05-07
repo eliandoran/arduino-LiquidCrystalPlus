@@ -5,7 +5,7 @@ class Page;
 class Display;
 
 class Widget {
-private:
+protected:
     Page *parentPage;
     Display *display;
 
@@ -16,7 +16,7 @@ public:
 
     virtual void show();
     virtual void loop();
-    virtual ~Widget() = 0;
+    virtual ~Widget();
 
     Page& getParentPage();
 };

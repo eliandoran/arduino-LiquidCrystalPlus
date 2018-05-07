@@ -8,6 +8,7 @@ LiquidCrystalPlus lcd;
 
 void setup() {
     Serial.begin(9600);
+    Serial.println("Startup");
 
     lcd.setPins(8, 9, 4, 5, 6, 7);
     lcd.setResolution(16, 2);

@@ -1,5 +1,6 @@
 #include <LinkedList.h>
 #include <LiquidCrystalPlus.hpp>
+#include <Arduino.h>
 #include "Page.hpp"
 #include "Widget.hpp"
 
@@ -14,20 +15,38 @@ Display& Page::getDisplay() {
 }
 
 void Page::add(Widget &widget) {
-    widgets.add(&widget);
+    add(&widget);
 }
 
-Page::Page() {
+void Page::add(Widget *widget) {
+    widgets.add(widget);
+    widget->init(*this);
 }
 
-void Page::show() {
+Page::Page() { }
+Page::~Page() { }
+void Page::show() { }
+void Page::loop() { }
 
+void Page::inner_show() {
+    if (!widgets.size()) return;
+
+    Serial.print(widgets.size());
+    for (int i=0; i<widgets.size(); i++) {
+        Widget* widget = widgets.get(i);
+        Serial.print("Widget");
+        Serial.println((long)widget);
+
+        delay(100);
+        widget->show();
+    }
 }
 
-void Page::loop() {
+void Page::inner_loop() {
+    if (!widgets.size()) return;
 
-}
-
-Page::~Page() {
-    // No action needed.
+    for (int i=0; i<widgets.size(); i++) {
+        Widget* widget = widgets.get(i);
+        widget->loop();
+    }
 }

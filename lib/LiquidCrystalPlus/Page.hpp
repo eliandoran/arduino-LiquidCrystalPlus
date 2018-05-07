@@ -18,7 +18,12 @@ public:
 
     void init(LiquidCrystalPlus &lcd);
     Display& getDisplay();
+
     void add(Widget &widget);
+    void add(Widget *widget);
+
+    void inner_show();
+    void inner_loop();
 
     virtual void show();
     virtual void loop();
