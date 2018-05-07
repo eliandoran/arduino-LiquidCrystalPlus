@@ -42,7 +42,7 @@ void Page::inner_show() {
 void Page::inner_loop() {
     if (!widgets.size()) return;
 
-    unsigned int timePassed = millis() - lastUpdateTime;
+    unsigned int timePassed = millis() - lastUpdateTime;    
 
     for (int i=0; i<widgets.size(); i++) {
         Widget* widget = widgets.get(i);
@@ -54,5 +54,5 @@ void Page::inner_loop() {
         }
     }
 
-    lastUpdateTime = millis();
+    lastUpdateTime += timePassed;
 }
