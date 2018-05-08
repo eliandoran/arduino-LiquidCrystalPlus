@@ -1,5 +1,5 @@
-#include "Widget.hpp"
-#include "Page.hpp"
+#include "Widget.h"
+#include "Page.h"
 #include <Arduino.h>
 
 void Widget::init(Page &parentPage) {

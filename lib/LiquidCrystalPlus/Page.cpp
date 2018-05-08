@@ -1,8 +1,8 @@
 #include <LinkedList.h>
-#include <LiquidCrystalPlus.hpp>
+#include <LiquidCrystalPlus.h>
 #include <Arduino.h>
-#include "Page.hpp"
-#include "Widget.hpp"
+#include "Page.h"
+#include "Widget.h"
 
 void Page::init(LiquidCrystalPlus &lcd) {
     this->lcd = &lcd;

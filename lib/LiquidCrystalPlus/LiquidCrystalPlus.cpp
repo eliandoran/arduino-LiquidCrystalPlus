@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "LiquidCrystalPlus.hpp"
+#include "LiquidCrystalPlus.h"
 
 LiquidCrystalPlus::LiquidCrystalPlus()
 {

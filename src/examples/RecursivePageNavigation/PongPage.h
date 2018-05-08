@@ -1,4 +1,4 @@
-#include <LiquidCrystalPlus.hpp>
+#include <LiquidCrystalPlus.h>
 
 class PongPage: public Page {
 public:

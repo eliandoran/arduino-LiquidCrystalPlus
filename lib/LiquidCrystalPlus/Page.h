@@ -2,7 +2,7 @@
 #define PAGE_INCLUDED
 
 #include <LinkedList.h>
-#include "Widget.hpp"
+#include "Widget.h"
 
 class LiquidCrystalPlus;
 class Display;

@@ -1,7 +1,7 @@
 #include <Arduino.h>
-#include <LiquidCrystalPlus.hpp>
-#include "PingPage.hpp"
-#include "PongPage.hpp"
+#include <LiquidCrystalPlus.h>
+#include "PingPage.h"
+#include "PongPage.h"
 
 #define DELAY 1000
 

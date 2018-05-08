@@ -1,6 +1,6 @@
 #include <LiquidCrystal.h>
-#include <LiquidCrystalPlus.hpp>
-#include "Display.hpp"
+#include <LiquidCrystalPlus.h>
+#include "Display.h"
 
 Display::Display() {
     // Set defaults

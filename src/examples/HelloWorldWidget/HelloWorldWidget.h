@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include <LiquidCrystalPlus.hpp>
+#include <LiquidCrystalPlus.h>
 
 class MillisecondsCounterWidget: public Widget {
     void update() {

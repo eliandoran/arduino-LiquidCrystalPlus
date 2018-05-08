@@ -1,8 +1,8 @@
 #ifndef LABEL_INCLUDED
 #define LABEL_INCLUDED
 
-#include "../Widget.hpp"
-#include "../Display.hpp"
+#include "../Widget.h"
+#include "../Display.h"
 #include <Arduino.h>
 
 class Label: public Widget {

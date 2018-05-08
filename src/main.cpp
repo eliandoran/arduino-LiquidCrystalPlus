@@ -1,8 +1,8 @@
 #include <Arduino.h>
-#include <LiquidCrystalPlus.hpp>
-#include "examples/HelloWorld/HelloWorldPage.hpp"
-#include "examples/HelloWorldWidget/HelloWorldWidget.hpp"
-#include "examples/RecursivePageNavigation/PingPage.hpp"
+#include <LiquidCrystalPlus.h>
+#include "examples/HelloWorld/HelloWorldPage.h"
+#include "examples/HelloWorldWidget/HelloWorldWidget.h"
+#include "examples/RecursivePageNavigation/PingPage.h"
 
 LiquidCrystalPlus lcd;
 

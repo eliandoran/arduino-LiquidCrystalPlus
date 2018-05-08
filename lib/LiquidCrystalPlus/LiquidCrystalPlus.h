@@ -3,10 +3,10 @@
 
 #include <Arduino.h>
 #include <inttypes.h>
-#include "Page.hpp"
-#include "Display.hpp"
+#include "Page.h"
+#include "Display.h"
 
-#include "widgets/Label.hpp"
+#include "widgets/Label.h"
 
 class LiquidCrystalPlus {
 private:
