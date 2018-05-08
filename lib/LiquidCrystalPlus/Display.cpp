@@ -12,6 +12,14 @@ void Display::init() {
     lcd->begin(this->rows, this->columns);
 }
 
+uint8_t Display::getCurrentX() {
+    return currentX;
+}
+
+uint8_t Display::getCurrentY() {
+    return currentY;
+}
+
 /**
  * Causes the screen to be cleared.
  */
@@ -34,6 +42,9 @@ size_t Display::write(uint8_t value) {
 }
 
 void Display::setCursor(uint8_t col, uint8_t row) {
+    currentX = col;
+    currentY = row;
+
     col += xOffset;
     row += yOffset;
 
