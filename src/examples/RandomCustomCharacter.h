@@ -2,7 +2,6 @@
 #include <LiquidCrystalPlus.h>
 
 class RandomCustomCharacterPage: public Page {
-    CustomCharacterManager<uint8_t> *charMan;
     int rows, columns;
     int charWidth, charHeight;
 
@@ -12,8 +11,6 @@ class RandomCustomCharacterPage: public Page {
 
         charWidth = display->getCharacterWidth();
         charHeight = display->getCharacterHeight();
-
-        charMan = new CustomCharacterManager<uint8_t>(*display, 8, 5, 8);
 
         randomSeed(analogRead(0));
     }
@@ -38,6 +35,6 @@ class RandomCustomCharacterPage: public Page {
             randomChar[row] = random(max);
         }
 
-        charMan->printChar(randomChar);        
+        display->printChar(randomChar);        
     }
 };

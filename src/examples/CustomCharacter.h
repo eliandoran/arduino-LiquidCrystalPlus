@@ -1,7 +1,6 @@
 #include <LiquidCrystalPlus.h>
-#include <inttypes.h>
 
-uint8_t starsCharacter[8] = {
+CustomChar starsCharacter[] = {
     0b11111,
     0b11111,
     0b11111,
@@ -12,7 +11,7 @@ uint8_t starsCharacter[8] = {
     0b00000
 };
 
-uint8_t starsCharacterReverse[8] = {
+CustomChar starsCharacterReverse[] = {
     0b00000,
     0b00000,
     0b00000,
@@ -24,11 +23,7 @@ uint8_t starsCharacterReverse[8] = {
 };
 
 class CustomCharacterPage: public Page {
-    CustomCharacterManager<uint8_t> *charMan;
-
     void show() {
-        charMan = new CustomCharacterManager<uint8_t>(*display, 8, 5, 8);
-
         display->setOffset(0, 0);
     }
 
@@ -43,10 +38,10 @@ class CustomCharacterPage: public Page {
         }
 
         display->setCursor(i, 0);
-        charMan->printChar(which ? starsCharacter : starsCharacterReverse);       
+        display->printChar(which ? starsCharacter : starsCharacterReverse);       
 
         display->setCursor(i, 1);
-        charMan->printChar(which ? starsCharacter : starsCharacterReverse);       
+        display->printChar(which ? starsCharacter : starsCharacterReverse);       
 
         which = !which;
 

@@ -8,6 +8,9 @@ Display::Display() {
     this->rows = 2;
     this->charWidth = 5;
     this->charHeight = 8;
+    this->maxCustomCharacters = 8;
+    this->charStore = (CustomChar**)calloc(maxCustomCharacters, sizeof(CustomChar*));
+    this->lastIndex = 0;
 }
 
 void Display::init() {
@@ -49,6 +52,10 @@ uint8_t Display::getCharacterHeight() {
     return charHeight;
 }
 
+uint8_t Display::getMaxCustomCharacters() {
+    return maxCustomCharacters;
+}
+
 void Display::setResolution(int columns, int rows) {
     this->columns = columns;
     this->rows = rows;
@@ -76,4 +83,37 @@ void Display::refreshCursor() {
 void Display::setOffset(uint8_t xOffset, uint8_t yOffset) {
     this->xOffset = xOffset;
     this->yOffset = yOffset;
+}
+
+short Display::loadChar(CustomChar *customChar) {
+    if (++lastIndex >= maxCustomCharacters)
+        lastIndex = 0;    
+
+    lcd->createChar(lastIndex, customChar);
+    charStore[lastIndex] = customChar;
+    
+    return lastIndex;
+}
+
+void Display::printChar(CustomChar *customChar) {    
+    int charIndex;
+
+    for (charIndex=0; charIndex<maxCustomCharacters; charIndex++) {
+        if (charStore[charIndex] == customChar) {
+            write((uint8_t)charIndex);
+            return;
+        }
+    }
+
+    charIndex = loadChar(customChar);
+
+    /*
+     * HACK: Interestingly enough, if one draws a character that was just
+     * loaded via `loadChar()` it will not display at all. It seems that
+     * simply repositioning the cursor to the same spot where it would
+     * normally be drawn fixes the problem.
+     */
+    refreshCursor();
+
+    write((uint8_t)charIndex);
 }

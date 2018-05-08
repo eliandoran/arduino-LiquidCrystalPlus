@@ -5,7 +5,6 @@
 #include <inttypes.h>
 #include "Page.h"
 #include "Display.h"
-#include "CustomCharacterManager.h"
 
 #include "widgets/Label.h"
 

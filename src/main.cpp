@@ -20,13 +20,16 @@ void setup() {
     //lcd.show(new HelloWorldPage());
 
     // Example: HelloWorldWidgetPage
-    lcd.show(new HelloWorldWidgetPage());
+    //lcd.show(new HelloWorldWidgetPage());
 
     // Example: RecursivePageNavigation
     //lcd.show(new PingPage());
 
     // Example: Custom Character
-    lcd.show(new RandomCustomCharacterPage());
+    lcd.show(new CustomCharacterPage());
+
+    // Example: Random Character
+    //lcd.show(new RandomCustomCharacterPage());
 
     lcd.doLoop();
 }
