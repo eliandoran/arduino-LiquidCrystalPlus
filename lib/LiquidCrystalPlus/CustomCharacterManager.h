@@ -61,12 +61,10 @@ public:
              * simply repositioning the cursor to the same spot where it would
              * normally be drawn fixes the problem.
              */
-            display.refreshCursor();
-
-            display.write((uint8_t)charIndex);
-        } else {
-            display.write(charIndex);
+            display.refreshCursor();            
         }
+
+        display.write((uint8_t)charIndex);
     }
 };
 
