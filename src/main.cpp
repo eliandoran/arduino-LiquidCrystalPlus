@@ -3,7 +3,8 @@
 #include "examples/HelloWorld/HelloWorldPage.h"
 #include "examples/HelloWorldWidget/HelloWorldWidget.h"
 #include "examples/RecursivePageNavigation/PingPage.h"
-#include "examples/CustomCharacter/CustomCharacter.h"
+#include "examples/CustomCharacter.h"
+#include "examples/RandomCustomCharacter.h"
 
 LiquidCrystalPlus lcd;
 
@@ -25,7 +26,7 @@ void setup() {
     //lcd.show(new PingPage());
 
     // Example: Custom Character
-    lcd.show(new CustomCharacterPage());
+    lcd.show(new RandomCustomCharacterPage());
 
     lcd.doLoop();
 }
