@@ -6,6 +6,8 @@ Display::Display() {
     // Set defaults
     this->columns = 16;
     this->rows = 2;
+    this->charWidth = 5;
+    this->charHeight = 8;
 }
 
 void Display::init() {
@@ -29,6 +31,22 @@ void Display::clear() {
 
 void Display::setPins(uint8_t rs,  uint8_t enable, uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3) {
     lcd = new LiquidCrystal(rs, enable, d0, d1, d2, d3);
+}
+
+uint8_t Display::getScreenWidth() {
+    return columns;
+}
+
+uint8_t Display::getScreenHeight() {
+    return rows;
+}
+
+uint8_t Display::getCharacterWidth() {
+    return charWidth;
+}
+
+uint8_t Display::getCharacterHeight() {
+    return charHeight;
 }
 
 void Display::setResolution(int columns, int rows) {
