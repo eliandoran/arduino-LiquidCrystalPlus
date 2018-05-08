@@ -26,18 +26,13 @@ private:
     }
 
     short loadChar(TRow* rows) {
-        int charIndex;
+        if (++lastIndex >= maxCharacters)
+            lastIndex = 0;    
 
-        if (lastIndex < maxCharacters) {
-            charIndex = lastIndex++;
-        } else {
-            charIndex = lastIndex;
-        }
-
-        display.lcd->createChar(charIndex, rows);
-        charStore[charIndex] = rows;
+        display.lcd->createChar(lastIndex, rows);
+        charStore[lastIndex] = rows;
         
-        return charIndex;
+        return lastIndex;
     }
 
 public:    
