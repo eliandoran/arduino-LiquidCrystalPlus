@@ -51,6 +51,10 @@ void Display::setCursor(uint8_t col, uint8_t row) {
     lcd->setCursor(col, row);
 }
 
+void Display::refreshCursor() {
+    setCursor(currentX, currentY);
+}
+
 void Display::setOffset(uint8_t xOffset, uint8_t yOffset) {
     this->xOffset = xOffset;
     this->yOffset = yOffset;

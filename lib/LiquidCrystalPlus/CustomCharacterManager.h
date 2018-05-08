@@ -56,12 +56,12 @@ public:
             charIndex = loadChar(rows);
 
             /*
-             * HACK: Interestingly enough, it seems that without repositioning the cursor the first
-             * time the custom character is displayed, the character would not display at all.
+             * HACK: Interestingly enough, if one draws a character that was just
+             * loaded via `loadChar()` it will not display at all. It seems that
+             * simply repositioning the cursor to the same spot where it would
+             * normally be drawn fixes the problem.
              */
-            uint8_t currentX = display.getCurrentX();
-            uint8_t currentY = display.getCurrentY();
-            display.setCursor(currentX, currentY);
+            display.refreshCursor();
 
             display.write((uint8_t)charIndex);
         } else {
