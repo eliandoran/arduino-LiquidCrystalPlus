@@ -34,5 +34,13 @@ size_t Display::write(uint8_t value) {
 }
 
 void Display::setCursor(uint8_t col, uint8_t row) {
+    col += xOffset;
+    row += yOffset;
+
     lcd->setCursor(col, row);
+}
+
+void Display::setOffset(uint8_t xOffset, uint8_t yOffset) {
+    this->xOffset = xOffset;
+    this->yOffset = yOffset;
 }

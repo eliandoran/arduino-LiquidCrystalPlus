@@ -9,8 +9,8 @@ class LiquidCrystalPlus;
 class Display: public Print {
 protected:
     LiquidCrystal *lcd;
-    int columns;
-    int rows;
+    uint8_t columns, rows;
+    uint8_t xOffset, yOffset;
 public:
     Display();
 
@@ -23,6 +23,7 @@ public:
     void setResolution(int columns, int rows);
 
     void setCursor(uint8_t col, uint8_t row);
+    void setOffset(uint8_t xOffset, uint8_t yOffset);
 };
 
 #endif

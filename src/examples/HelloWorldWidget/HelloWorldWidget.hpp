@@ -3,7 +3,6 @@
 
 class MillisecondsCounterWidget: public Widget {
     void update() {
-        display->setCursor(0, 1);
         display->print(millis());
     }
 
@@ -18,10 +17,10 @@ Label topLabel;
 public:
     virtual void show() {
         add(topLabel);
-        add(new MillisecondsCounterWidget());
+        add(new MillisecondsCounterWidget(), 1, 1);
     }
 
     virtual void loop() {
-        topLabel.setText("Hello");
+        topLabel.setText("Millis:");
     }
 };
