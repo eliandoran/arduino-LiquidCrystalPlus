@@ -17,22 +17,15 @@ private:
     int lastIndex;
 
     short findCharIndex(TRow* rows) {
-        Serial.print("Finding character @ ");
-        Serial.println((long)rows);        
-
         for (int i=0; i<maxCharacters; i++) {
-            if (charStore[i] == rows) {
-                Serial.print("Found it at ");
-                Serial.println(i);
-                return i;
-            }
+            if (charStore[i] == rows)
+                return i;        
         }
         
         return CHAR_NOT_FOUND;
     }
 
     short loadChar(TRow* rows) {
-        Serial.println("Not found, loading.");
         int charIndex;
 
         if (lastIndex < maxCharacters) {
@@ -54,25 +47,6 @@ public:
         this->charHeight = charHeight;
         this->charStore = (TRow**)calloc(maxCharacters, sizeof(TRow*));
         this->lastIndex = 0;
-
-        uint8_t emptyChar[8] = {
-            0b00000,
-            0b00000,
-            0b00000,
-            0b00000,
-            0b00000,
-            0b00000,
-            0b00000,
-            0b00000
-        };
-
-        for (int i=0; i<maxCharacters; i++) {
-            display.lcd->createChar(i, emptyChar);
-        }
-
-        delay(500);
-
-        lastIndex = 0;
     }
 
     void printChar(TRow* rows) {        
