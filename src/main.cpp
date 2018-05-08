@@ -22,8 +22,6 @@ void setup() {
 
     // Example: RecursivePageNavigation
     //lcd.show(new PingPage());
-}
-
-void loop() {
+    
     lcd.doLoop();
 }
