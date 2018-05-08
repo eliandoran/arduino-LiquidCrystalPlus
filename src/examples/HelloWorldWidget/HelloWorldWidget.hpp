@@ -13,13 +13,15 @@ class MillisecondsCounterWidget: public Widget {
 };
 
 class HelloWorldWidgetPage: public Page {
+Label topLabel;
+
 public:
     virtual void show() {
-        add(new Label());
+        add(topLabel);
         add(new MillisecondsCounterWidget());
     }
 
     virtual void loop() {
-
+        topLabel.setText("Hello");
     }
 };
