@@ -32,20 +32,24 @@ void Page::add(Widget *widget, uint8_t col, uint8_t row) {
     add(widget);
 }
 
-Page::Page() { }
-Page::~Page() { }
-void Page::show() { }
-void Page::loop() { }
-
-void Page::inner_show() {
+void Page::invalidate() {
     if (!widgets.size()) return;
-
+    
     lastUpdateTime = millis();
 
     for (int i=0; i<widgets.size(); i++) {
         Widget* widget = widgets.get(i);
         updateWidget(*widget);
     }
+}
+
+Page::Page() { }
+Page::~Page() { }
+void Page::show() { }
+void Page::loop() { }
+
+void Page::inner_show() {    
+    invalidate();
 }
 
 inline void Page::updateWidget(Widget &widget) {

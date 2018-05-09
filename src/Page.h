@@ -27,6 +27,7 @@ public:
     void add(Widget *widget);
     void add(Widget &widget, uint8_t col, uint8_t row);
     void add(Widget *widget, uint8_t col, uint8_t row);
+    void invalidate();
 
     void inner_show();
     void inner_loop();
