@@ -1,0 +1,16 @@
+{
+    "name": "LiquidCrystalPlus",
+    "description": "Creating a better experience for LCD-1602 / Hitachi HD44780, now with widget and navigation support.",
+    "keywords": "LiquidCrystal,LCD,1602,Hitachi,HD44780",
+    "authors": {
+        "name": "Elian Doran",
+        "email": "elian@doran.xyz",
+        "url": "elian.doran.xyz",
+        "maintainer": true
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/eliandoran/arduino-LiquidCrystalPlus.git"
+    },
+    "version": "0.1"
+}
