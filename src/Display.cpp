@@ -98,6 +98,12 @@ short Display::loadChar(CustomChar *customChar) {
 void Display::printChar(CustomChar *customChar) {    
     int charIndex;
 
+    // Treat NULL characters as blank spaces.
+    if (customChar == NULL) {
+        print(' ');
+        return;
+    }
+
     for (charIndex=0; charIndex<maxCustomCharacters; charIndex++) {
         if (charStore[charIndex] == customChar) {
             write((uint8_t)charIndex);
